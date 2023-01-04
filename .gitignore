@@ -1,0 +1,4 @@
+token.txt
+*.pyc
+*.egg-info
+dist
