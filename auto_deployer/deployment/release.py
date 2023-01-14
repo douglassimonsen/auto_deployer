@@ -56,7 +56,7 @@ def add_wheel(containing_dir, library_name, version, github_api_url, github_toke
     data = json.loads(x.text)
     if data["tag_name"] != f"{library_name}-v{version}":
         raise ValueError("The tag/release failed to generate")
-    upload_url = data["upload_url"].split("{")[0] + "?name={library_name}.tar.gz"
+    upload_url = data["upload_url"].split("{")[0] + f"?name={library_name}.tar.gz"
     try:
         requests.post(
             upload_url,
